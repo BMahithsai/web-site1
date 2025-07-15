@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodie's Delight</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #e85a4f;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #e85a4f;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 100px 10% 60px;
+      min-height: 100vh;
+      background-color: #fff8f0;
+      transition: all 0.8s ease;
+    }
+
+    h1, h2 {
+      color: #e85a4f;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Sections */
+    #home {
+      background: linear-gradient(to right, #ffe8d6, #fff);
+      text-align: center;
+    }
+
+    .image-grid, .services-grid, .cards, .about-image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .image-grid img,
+    .about-image-grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .service-card, .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover,
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .service-card img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .card h3,
+    .service-card h3 {
+      color: #e85a4f;
+      margin-bottom: 10px;
+    }
+
+    #contact {
+      background: #fae1dd;
+    }
+
+    #contact p {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        background: white;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        color: #e85a4f;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Foodie's Delight</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Menu</a></li>
+      <li><a href="#features">Specials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h1>Welcome to Foodie's Delight</h1>
+    <p>Savor the best culinary experiences crafted with love and taste.</p>
+    <div class="image-grid">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Delicious Pizza">
+      <img src="https://i.pinimg.com/originals/01/2f/50/012f50818c1416247e594baf4976ef1c.jpg" alt="Fresh Burger">
+      <img src="https://www.mystart.com/blog/wp-content/uploads/healthy-bowl01.jpeg" alt="Healthy Bowl">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Foodie's Delight, we believe food is not just fuel—it's an experience. Our chefs blend passion and tradition to bring you unforgettable flavors.</p>
+    <div class="about-image-grid">
+      <img src="https://www.hospitalitynet.org/picture/xxl_153084694.jpg?t=20171204133653" alt="Our Kitchen">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Chef at work">
+      <img src="https://i.pinimg.com/originals/b5/49/a9/b549a9280fe2d5251d98a26285eaecda.jpg" alt="Food Plating">
+    </div>
+  </section>
+
+  <!-- Services / Menu -->
+  <section id="services">
+    <h2>Our Menu</h2>
+    <p>From street-style snacks to gourmet dishes, there's something for every palate.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://wallpapers.com/images/hd/traditional-thali-platter-indian-food-7ppdmw8bs4n1f36j.jpg" alt="Tacos">
+        <h3>Traditional thali</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/557f0477931265.5c960fcee2ddb.jpg" alt="Pasta">
+        <h3>Italian Pasta</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://i.pinimg.com/originals/12/9a/09/129a092e0e8495da7267719990804351.jpg" alt="Desserts">
+        <h3>Decadent Desserts</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <h2>Our Specials</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🌿 Fresh Ingredients</h3>
+        <p>We source our produce daily to ensure top quality meals.</p>
+      </div>
+      <div class="card">
+        <h3>🔥 Live Cooking</h3>
+        <p>Watch the magic unfold as chefs prepare your food fresh.</p>
+      </div>
+      <div class="card">
+        <h3>⭐ Chef Specials</h3>
+        <p>Weekly curated dishes with a gourmet twist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: order@foodiesdelight.com<br>Phone: +91 91234 56789</p>
+  </section>
+
+  <!-- Script -->
+  <script>
+    // Toggle mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
